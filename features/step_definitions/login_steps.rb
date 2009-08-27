@@ -5,10 +5,6 @@ Dado /^os seguintes logins:$/ do |table|
   end
 end
 
-Dado /^que eu não estou logado$/ do
-  pending
-end
-
 Então /^devo estar logado$/ do
   pending
 end

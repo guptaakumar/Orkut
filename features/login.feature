@@ -3,25 +3,20 @@ Funcionalidade: Login
   Desejo logar no sistema
   De modo que eu possa acessar minha tela de perfil
 
-  Cenário: Usuario não logado
+  Contexto:
     Dado os seguintes logins:
-    |login|password|email|
-    |ricardo|almeida|ricardo@almeida.com|
-    E que eu não estou logado
-    E visito a tela de login
-    Quando preencho o campo "login" com "ricardo"
-    E preencho o campo "password" com "almeida"
-    E clico no botão "Submit"
-    Então devo estar logado
+      |login|password|email|
+      |ricardo|almeida|ricardo@almeida.com|
+    Quando visito a tela de "login"
+    E preencho o campo "Username" com "ricardo"
 
-    Dado os seguintes logins:
-    |login|password|email|
-    |ricardo|almeida|ricardo@almeida.com|
-    E que eu não estou logado
-    E visito a tela de login
-    Quando preencho o campo "login" com "ricardo"
-    E preencho o campo "password" com "teste123"
-    E clico no botão "Submit"
-    Então não devo estar logado
-    E devo ver "Password is not valid"
+      Cenário: Usuario logado com sucesso
+        Quando preencho o campo "Password" com "almeida"
+        E clico no botão "Submit"
+        Então devo ver "Successfully logged in."
+
+      Cenário: Usuario inválido
+        Quando preencho o campo "Password" com "teste123"
+        E clico no botão "Submit"
+        Então devo ver "Password is not valid"
 
