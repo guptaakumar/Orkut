@@ -19,6 +19,8 @@ module NavigationHelpers
 
     when /^login$/i
       login_path
+    when /^perfil$/i
+      perfis_path
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

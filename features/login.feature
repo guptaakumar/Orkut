@@ -13,7 +13,7 @@ Funcionalidade: Login
       Cenário: Usuario logado com sucesso
         Quando preencho o campo "Password" com "almeida"
         E clico no botão "Submit"
-        Então devo ver "Successfully logged in."
+        Então devo estar na tela de perfil
 
       Cenário: Usuario inválido
         Quando preencho o campo "Password" com "teste123"
