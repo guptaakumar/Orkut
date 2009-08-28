@@ -12,7 +12,7 @@ end
 
 Then /^os dados do perfil cadastrados$/ do
   response.should contain "Ricardo"
-  response.should contain "2005-07-24"
+  response.should contain "Idade"
   response.should contain "Masculino"
   response.should contain "Solteiro"
 end

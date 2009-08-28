@@ -4,6 +4,7 @@ Funcionalidade: Criar novo usuario
 
   Cenário: Criar novo usuario
     Dado que não existe o usuario "ricardo"
+    E que não estou logado
     Quando visito a tela de "novo usuario"
     E preencho o campo "Username" com "ricardo"
     E preencho o campo "Email" com "ricardo@almeida.com"

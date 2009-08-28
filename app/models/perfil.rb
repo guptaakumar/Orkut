@@ -3,6 +3,6 @@ class Perfil < ActiveRecord::Base
   validates_presence_of :user, :nome
 
   def idade
-    ((Date.today.to_time - data_nascimento.to_time) / 1.years).to_i
+    ((Date.today.to_time - data_nascimento.to_time) / 1.years).to_i unless data_nascimento.nil?
   end
 end
