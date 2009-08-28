@@ -12,11 +12,11 @@ Funcionalidade: Login
 
       Cenário: Usuario logado com sucesso
         Quando preencho o campo "Password" com "almeida"
-        E clico no botão "Submit"
+        E clico no botão "Enviar"
         Então devo estar na tela de perfil
 
       Cenário: Usuario inválido
         Quando preencho o campo "Password" com "teste123"
-        E clico no botão "Submit"
+        E clico no botão "Enviar"
         Então devo ver "Password is not valid"
 

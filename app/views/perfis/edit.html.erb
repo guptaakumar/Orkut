@@ -13,7 +13,8 @@
   </p>
   <p>
     <%= f.label :sexo %><br />
-    <%= f.text_field :sexo %>
+    <%= f.check_box :sexo, "Masculino", "masculino" %>
+    <%= f.check_box :sexo, "Feminino", "feminino" %>
   </p>
   <p>
     <%= f.label :estado_civil %><br />
@@ -26,3 +27,4 @@
 
 <%= link_to 'Show', @perfil %> |
 <%= link_to 'Back', perfis_path %>
+
