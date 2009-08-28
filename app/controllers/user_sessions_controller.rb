@@ -1,13 +1,19 @@
 class UserSessionsController < ApplicationController
   def new
-    @user_session = UserSession.new
+    if current_user.nil?
+      @user_session = UserSession.new
+    else
+      logger.debug("#{current_user.inspect}")
+      logger.debug("#{params["user_session"]}")
+      redirect_to perfil_path(current_user.perfil)
+    end
   end
 
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Successfully logged in."
-      redirect_to edit_perfil_url(Perfil.find_by_nome(params["user_session"]["username"]))
+      redirect_to perfil_url(current_user.perfil)
     else
       render :action => 'new'
     end
