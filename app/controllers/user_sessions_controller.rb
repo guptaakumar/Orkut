@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Successfully logged in."
-      redirect_to perfis_url
+      redirect_to edit_perfil_url(Perfil.find_by_nome(params["user_session"]["username"]))
     else
       render :action => 'new'
     end

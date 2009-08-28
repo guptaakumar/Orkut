@@ -5,7 +5,9 @@ Funcionalidade: Gerenciar Perfis
 
   Contexto: Usuario já cadastrado
     Cenário: Editar perfil
-      Dado que eu não estou cadastrado
+      Dado os seguintes logins:
+        |login|password|email|
+        |ricardo|almeida|ricardo@almeida.com|
       Quando visito a tela de "editar perfil"
       E cadastro meus dados
       Então visualiso a tela 'Perfil do usuário' e os dados do perfil cadastrados

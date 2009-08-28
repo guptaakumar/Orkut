@@ -19,8 +19,6 @@ module NavigationHelpers
 
     when /^login$/i
       login_path
-    when /^perfil$/i
-      perfis_path
     when /^novo usuario$/i
       new_user_path
     when /^editar perfil$/i
