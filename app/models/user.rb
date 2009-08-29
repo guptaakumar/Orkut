@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_authentic
-  has_one :perfil
+  has_one :perfil, :dependent => :destroy
 
   after_create :cria_perfil
 

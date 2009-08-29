@@ -39,7 +39,16 @@ class Perfil < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :user, :nome
 
-  has_many :amizades
+  has_many :amizades, :dependent => :destroy do
+    def adicionar(amigo)
+      self.create(:amigo => amigo) if pode_adicionar?(amigo)
+    end
+    
+    def pode_adicionar?(amigo)
+      self.select{|amizade| amizade.amigo == amigo}.empty? && (amigo != proxy_owner)
+    end
+  end
+  
   has_many :amigos, :through => :amizades
   
   has_many :amizades_reversas, :class_name => "Amizade", :foreign_key => "amigo_id"  

@@ -6,8 +6,5 @@ describe Amizade do
 
   should_validate_presence_of :amigo, :perfil
   
-  before :each do
-    
-  end  
-  should_validate_uniqueness_of :amigo_id, :scope => :perfil
+  #should_validate_uniqueness_of :amigo_id, :scope => :perfil
 end

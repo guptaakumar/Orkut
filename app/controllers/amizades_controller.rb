@@ -1,4 +1,8 @@
 class AmizadesController < ApplicationController
+  def new
+    @amigos_disponiveis = Amizade.amigos_disponiveis(current_user)
+  end
+
   def create
     @amizade = current_user.amizades.build(:amigo_id => params[:amigo_id])
     if @amizade.save
