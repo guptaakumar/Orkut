@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20090829200511) do
 
   create_table "comunidades", :force => true do |t|
     t.string   "nome"
+    t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "perfil_id"
