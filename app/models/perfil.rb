@@ -71,6 +71,10 @@ class Perfil < ActiveRecord::Base
     (sexo.blank? || estado_civil.blank?) ? '-' : Situacao[sexo][estado_civil]
   end
   
+  def ultima_atividade
+    user.last_request_at || user.created_at
+  end
+  
   protected
     def carrega_valores_padrao
       self.sexo ||= Sexo::Masculino

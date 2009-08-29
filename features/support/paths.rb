@@ -19,12 +19,14 @@ module NavigationHelpers
 
     when /^login$/i
       login_path
+    when /^logout$/i
+      logout_path
     when /^novo usuario$/i
       new_user_path
     when /^editar perfil$/i
       edit_perfil_path(Perfil.first)
     when /^perfil$/i
-      perfil_path(Perfil.first)
+      perfil_path(@perfil_atual)
     when /^amigos$/i
       amigos_perfil_path(@perfil_atual)
     else

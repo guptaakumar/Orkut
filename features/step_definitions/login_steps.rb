@@ -12,3 +12,8 @@ end
 Então /^não devo estar logado$/ do
   pending
 end
+
+Então /^deve carregar o usuário "([^\"]*)"$/ do |nome_usuario|
+  @perfil_atual = User.find_by_username(nome_usuario).perfil
+end
+

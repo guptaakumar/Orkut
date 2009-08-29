@@ -13,7 +13,8 @@ Funcionalidade: Login
       Cenário: Usuario logado com sucesso
         Quando preencho o campo "Password" com "almeida"
         E clico no botão "Enviar"
-        Então devo estar na tela de perfil
+        Então deve carregar o usuário "ricardo"
+        E devo estar na tela de perfil
 
       Cenário: Usuario inválido
         Quando preencho o campo "Password" com "teste123"
