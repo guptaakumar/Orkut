@@ -1,0 +1,22 @@
+<h1>Listing amizades</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Amigo</th>
+  </tr>
+
+<% @amizades.each do |amizade| %>
+  <tr>
+    <td><%=h amizade.user %></td>
+    <td><%=h amizade.amigo_id %></td>
+    <td><%= link_to 'Show', amizade %></td>
+    <td><%= link_to 'Edit', edit_amizade_path(amizade) %></td>
+    <td><%= link_to 'Destroy', amizade, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New amizade', new_amizade_path %>

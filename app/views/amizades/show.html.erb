@@ -1,0 +1,13 @@
+<p>
+  <b>User:</b>
+  <%=h @amizade.user %>
+</p>
+
+<p>
+  <b>Amigo:</b>
+  <%=h @amizade.amigo_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_amizade_path(@amizade) %> |
+<%= link_to 'Back', amizades_path %>

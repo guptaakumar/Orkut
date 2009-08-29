@@ -9,13 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090828005453) do
+ActiveRecord::Schema.define(:version => 20090828232827) do
 
-  create_table "perfils", :force => true do |t|
-    t.string   "nome"
-    t.date     "data_nascimento"
-    t.string   "sexo"
-    t.string   "estado_civil"
+  create_table "amizades", :force => true do |t|
+    t.integer  "perfil_id"
+    t.integer  "amigo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,13 +39,20 @@ ActiveRecord::Schema.define(:version => 20090828005453) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "username",          :null => false
-    t.string   "email",             :null => false
-    t.string   "crypted_password",  :null => false
-    t.string   "password_salt",     :null => false
-    t.string   "persistence_token", :null => false
+    t.string   "username",                          :null => false
+    t.string   "email",                             :null => false
+    t.string   "crypted_password",                  :null => false
+    t.string   "password_salt",                     :null => false
+    t.string   "persistence_token",                 :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "login_count",        :default => 0, :null => false
+    t.integer  "failed_login_count", :default => 0, :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
   end
 
 end

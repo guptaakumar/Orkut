@@ -1,0 +1,2 @@
+module AmizadesHelper
+end

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :amizades
+
   map.resources :perfis
 
   map.login "login", :controller => "user_sessions", :action => "new"
