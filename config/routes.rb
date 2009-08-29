@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :comunidades
   map.resources :amizades
 
   map.resources :perfis, :member => {:amigos => :get}

@@ -24,6 +24,9 @@
     </div>
     <div class="comunidades">
       <h2>Comunidades</h2>
+	    <% @perfil.comunidades.each_with_index do |comunidade, i| %>
+	    <%= comunidade.nome if i < 8%>
+	    <% end %>
     </div>
   </div>
 </div>
