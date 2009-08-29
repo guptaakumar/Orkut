@@ -76,6 +76,12 @@ class Perfil < ActiveRecord::Base
     user.last_request_at || user.created_at
   end
   
+  def ultima_atividade=(data)
+    user.last_request_at = data
+    user.save
+  end
+  
+  
   protected
     def carrega_valores_padrao
       self.sexo ||= Sexo::Masculino

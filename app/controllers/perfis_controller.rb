@@ -84,7 +84,7 @@ class PerfisController < ApplicationController
   end
   
   def amigos
-    @amigos = Perfil.find(params[:id]).amigos
-    @amigos.sort! {|x,y| x.ultima_atividade <=> y.ultima_atividade}
+    @amigos = Perfil.all
+    @amigos.sort! {|x,y| (x.ultima_atividade <=> y.ultima_atividade) * -1}
   end
 end
