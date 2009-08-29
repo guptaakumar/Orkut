@@ -43,4 +43,8 @@ describe Perfil do
   it "não deve permitir a inclusao do perfil como amigo dele mesmo" do
     @admin.amizades.pode_adicionar?(@admin).should be_false
   end
+  
+  it "deve retornar as comunidades ordenadas pela última atividade" do
+    @perfil_a.comunidades.ultimas_atividades_das_comunidades.should_not be_nil
+  end
 end

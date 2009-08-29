@@ -24,8 +24,11 @@
     </div>
     <div class="comunidades">
       <h2>Comunidades</h2>
-	    <% @perfil.comunidades.each_with_index do |comunidade, i| %>
-	    <%= comunidade.nome if i < 8%>
+	    <% @perfil.comunidades.ultimas_atividades_das_comunidades.each_with_index do |comunidade, i| %>
+			<% if i < 8  %>
+				<%= link_to image_tag(comunidade.avatar.url(:micro)), comunidade %>
+	    		<%= comunidade.nome %><br/>
+			<% end %>
 	    <% end %>
     </div>
   </div>
