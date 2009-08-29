@@ -10,5 +10,6 @@ Funcionalidade: Gerenciar Perfis
         |ricardo|almeida|ricardo@almeida.com|
       Quando visito a tela de "editar perfil"
       E cadastro meus dados
-      Então visualiso a tela 'Perfil do usuário' e os dados do perfil cadastrados
+      Então visualiso a tela 'Perfil do Usuário'
+      E os dados do perfil cadastrados
 

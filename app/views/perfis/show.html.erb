@@ -1,23 +1,26 @@
-<p>
-  <b>Nome:</b>
-  <%=h @perfil.nome %>
-</p>
+<div class="identificacao">
+  <h1><%= @perfil.nome %></h1>
+  <%=h "#{@perfil.situacao}, #{@perfil.idade} anos" %>
+</div>
 
-<p>
-  <b>Data nascimento:</b>
-  <%=h @perfil.data_nascimento %>
-</p>
-
-<p>
-  <b>Sexo:</b>
-  <%=h @perfil.sexo %>
-</p>
-
-<p>
-  <b>Estado civil:</b>
-  <%=h @perfil.estado_civil %>
-</p>
-
+<div class="conteudo">
+  <div class="esquerda">
+  </div>
+  <div class="direita">
+    <div class="amigos">
+      <h2>Amigos</h2>
+      <ul>
+      <% @perfil.amigos.each do |amigo| %>
+        <li><%= amigo.nome %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="comunidades">
+      <h2>Comunidades</h2>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_perfil_path(@perfil) %> |
 <%= link_to 'Back', perfis_path %>
+

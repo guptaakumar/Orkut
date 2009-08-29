@@ -9,22 +9,21 @@
   </p>
   <p>
     <%= f.label :data_nascimento %><br />
-    <%= f.date_select :data_nascimento %>
+    <%= f.date_select :data_nascimento, :start_year => 1920, :end_year => (Date.today.year-10) %>
   </p>
   <p>
     <%= f.label :sexo %><br />
-    <%= f.check_box :sexo, "Masculino", "masculino" %>
-    <%= f.check_box :sexo, "Feminino", "feminino" %>
+    <%= f.radio_button :sexo, "masculino" %><%= Perfil::Sexos[Perfil::Sexo::Masculino] %>
+    <%= f.radio_button :sexo, "feminino" %><%= Perfil::Sexos[Perfil::Sexo::Feminino] %>
   </p>
   <p>
-    <%= f.label :estado_civil %><br />
-    <%= f.text_field :estado_civil %>
+    <%= f.label :estado_civil %>
+    <%= f.select "estado_civil", Perfil::EstadosCivis.map{|estado| estado.reverse} %>
   </p>
   <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @perfil %> |
-<%= link_to 'Back', perfis_path %>
+<%= link_to 'Back', @perfil %>
 

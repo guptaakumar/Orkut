@@ -23,6 +23,8 @@ module NavigationHelpers
       new_user_path
     when /^editar perfil$/i
       edit_perfil_path(Perfil.first)
+    when /^perfil$/i
+      perfil_path(Perfil.first)
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

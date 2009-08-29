@@ -1,3 +1,3 @@
-Dado /^que não existe o usuario "([^\"]*)"$/ do |arg1|
-
+Dado /^que não estou logado$/ do |arg1|
+  click_link "Logout"
 end
