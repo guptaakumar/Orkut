@@ -8,10 +8,20 @@ Dado /^que estou logado$/ do
 end
 
 Dado /^tenho os amigos:$/ do |amigos|
-  amigos.hashes.each do |hash|
-    @perfil_atual.amizades.adicionar(User.create!(:username => hash[:amigo], 
-    :email => "#{hash[:amigo]}@gonow.com", :password => "asdasd", 
-    :password_confirmation => "asdasd").perfil)
+  cadastra_users(amigos.hashes, :amigo).each do |user|
+    @perfil_atual.amizades.adicionar(user.perfil)
+  end
+end
+
+Dado /^tem os sequintes perfis cadastrados:$/ do |table|
+  cadastra_users(table.hashes, :username)
+end
+
+def cadastra_users(hashes, key)
+  hashes.map do |hash|
+    User.create!(:username => hash[key], 
+      :email => "#{hash[key]}@gonow.com", :password => "asdasd", 
+      :password_confirmation => "asdasd")
   end
 end
 
