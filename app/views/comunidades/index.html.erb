@@ -1,0 +1,22 @@
+<h1>Listing comunidades</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Perfil</th>
+  </tr>
+
+<% @comunidades.each do |comunidade| %>
+  <tr>
+    <td><%=h comunidade.nome %></td>
+    <td><%=h comunidade.perfil_id %></td>
+    <td><%= link_to 'Show', comunidade %></td>
+    <td><%= link_to 'Edit', edit_comunidade_path(comunidade) %></td>
+    <td><%= link_to 'Destroy', comunidade, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New comunidade', new_comunidade_path %>

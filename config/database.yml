@@ -30,13 +30,11 @@ test: &TEST
   timeout: 5000
 
 production:
-  adapter: mysql
-  encoding: utf8
-  host: localhost
-  database: orkut_development
-  username: root
-  password: root
-
+    adapter: sqlite3
+    encoding: utf8
+    host: localhost
+    database: db/production.sqlite3
+    
 cucumber:
   <<: *TEST
 

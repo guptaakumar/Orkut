@@ -9,13 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090829044328) do
+ActiveRecord::Schema.define(:version => 20090829142345) do
 
   create_table "amizades", :force => true do |t|
     t.integer  "perfil_id"
     t.integer  "amigo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "comunidades", :force => true do |t|
+    t.string   "nome"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "perfil_id"
   end
 
   create_table "perfis", :force => true do |t|

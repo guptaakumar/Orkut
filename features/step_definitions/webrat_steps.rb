@@ -99,7 +99,7 @@ Then /^devo ver \/([^\/]*)\/$/ do |regexp|
   response.should contain(regexp)
 end
 
-Then /^I should not see "([^\"]*)"$/ do |text|
+Then /^não devo ver "([^\"]*)"$/ do |text|
   response.should_not contain(text)
 end
 

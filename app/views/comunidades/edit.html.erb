@@ -1,0 +1,20 @@
+<h1>Editing comunidade</h1>
+
+<% form_for(@comunidade) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :perfil %><br />
+    <%= f.text_field :perfil_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @comunidade %> |
+<%= link_to 'Back', comunidades_path %>
