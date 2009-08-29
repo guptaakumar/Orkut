@@ -25,6 +25,8 @@ module NavigationHelpers
       edit_perfil_path(Perfil.first)
     when /^perfil$/i
       perfil_path(Perfil.first)
+    when /^amigos$/i
+      amigos_perfil_path(@perfil_atual)
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

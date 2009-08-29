@@ -82,4 +82,8 @@ class PerfisController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def amigos
+    @perfil = Perfil.find(params[:id])
+  end
 end

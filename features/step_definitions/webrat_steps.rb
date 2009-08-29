@@ -3,7 +3,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "pat
 # Commonly used webrat steps
 # http://github.com/brynary/webrat
 
-Given /^I am on (.+)$/ do |page_name|
+Given /^que eu estou na tela de (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
@@ -15,7 +15,7 @@ When /^clico no botão "([^\"]*)"$/ do |button|
   click_button(button)
 end
 
-When /^I follow "([^\"]*)"$/ do |link|
+When /^clico no link "([^\"]*)"$/ do |link|
   click_link(link)
 end
 

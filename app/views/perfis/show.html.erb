@@ -19,6 +19,8 @@
       <% @perfil.amigos.each do |amigo| %>
         <%= link_to image_tag(amigo.avatar.url(:micro)), amigo %>
       <% end %>
+      <br/>
+      <%= link_to 'Mais amigos...', amigos_perfil_path(perfil_atual) %>
     </div>
     <div class="comunidades">
       <h2>Comunidades</h2>
