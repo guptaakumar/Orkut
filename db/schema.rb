@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090828232827) do
+ActiveRecord::Schema.define(:version => 20090829044328) do
 
   create_table "amizades", :force => true do |t|
     t.integer  "perfil_id"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(:version => 20090828232827) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.text     "descricao"
   end
 
   create_table "sessions", :force => true do |t|
@@ -44,8 +49,6 @@ ActiveRecord::Schema.define(:version => 20090828232827) do
     t.string   "crypted_password",                  :null => false
     t.string   "password_salt",                     :null => false
     t.string   "persistence_token",                 :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "login_count",        :default => 0, :null => false
     t.integer  "failed_login_count", :default => 0, :null => false
     t.datetime "last_request_at"
@@ -53,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20090828232827) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

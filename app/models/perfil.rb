@@ -41,6 +41,18 @@ class Perfil < ActiveRecord::Base
 
   has_many :amizades
   has_many :amigos, :through => :amizades
+  
+  has_many :amizades_reversas, :class_name => "Amizade", :foreign_key => "amigo_id"  
+  has_many :amigos_reversos, :through => :amizades_reversas, :source => :perfil
+
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :micro => "50x50" },
+                    :url  => "/assets/perfis/:id/:style/:basename.:extension",
+                    :path => ":rails_root/public/assets/perfis/:id/:style/:basename.:extension"
+  validates_attachment_presence :avatar
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
+
+  
+  before_create :carrega_valores_padrao
 
   def idade
     ((Date.today.to_time - data_nascimento.to_time) / 1.years).to_i unless data_nascimento.nil?
@@ -49,4 +61,10 @@ class Perfil < ActiveRecord::Base
   def situacao
     (sexo.blank? || estado_civil.blank?) ? '-' : Situacao[sexo][estado_civil]
   end
+  
+  protected
+    def carrega_valores_padrao
+      self.sexo ||= Sexo::Masculino
+      self.estado_civil ||= EstadoCivil::Solteiro
+    end
 end

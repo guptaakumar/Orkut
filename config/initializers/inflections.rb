@@ -7,5 +7,7 @@
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person', 'people'
     inflect.irregular 'perfil', 'perfis'
+    inflect.irregular 'amizade_reversa', 'amizades_reversas'
+    inflect.irregular 'amigo_reverso', 'amigos_reversos'
 #   inflect.uncountable %w( fish sheep )
 end

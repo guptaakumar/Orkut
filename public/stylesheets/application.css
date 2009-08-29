@@ -94,6 +94,14 @@ div {
 .identificacao {
   border: solid 2px;
   width: 100%;
+  height: 100px;
+}
+
+.identificacao .avatar {
+  display: inline;
+  float: left;
+  padding: 0;
+  margin-right: 10px;
 }
 
 .conteudo {
@@ -112,6 +120,12 @@ div {
   width: 64%;
   height: 100%;
   height: 400px;
+}
+
+.conteudo .esquerda .descricao {
+  display: block;
+  overflow: auto;
+  height: 85%;
 }
 
 .conteudo .direita {

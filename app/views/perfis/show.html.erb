@@ -1,26 +1,27 @@
 <div class="identificacao">
+  <div class="avatar">
+    <%= image_tag @perfil.avatar.url(:thumb) %>
+  </div>
   <h1><%= @perfil.nome %></h1>
   <%=h "#{@perfil.situacao}, #{@perfil.idade} anos" %>
 </div>
 
 <div class="conteudo">
   <div class="esquerda">
+      <h3>Quem sou eu</h3>
+    <div class="descricao">
+      <%=h @perfil.descricao %>
+    </div>
   </div>
   <div class="direita">
     <div class="amigos">
       <h2>Amigos</h2>
-      <ul>
       <% @perfil.amigos.each do |amigo| %>
-        <li><%= amigo.nome %></li>
+        <%= link_to image_tag(amigo.avatar.url(:micro)), amigo %>
       <% end %>
-      </ul>
     </div>
     <div class="comunidades">
       <h2>Comunidades</h2>
     </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_perfil_path(@perfil) %> |
-<%= link_to 'Back', perfis_path %>
-
