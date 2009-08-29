@@ -12,6 +12,7 @@ describe Perfil do
   should_have_attached_file(:avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :micro => "50x50" },
                     :url  => "/assets/perfis/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/perfis/:id/:style/:basename.:extension")
+  should_have_many :comunidades
   
   it "deve calcular a idade" do
     anos_atras = 5
